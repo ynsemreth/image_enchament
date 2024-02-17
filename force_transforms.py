@@ -27,15 +27,15 @@ def gamma_transformation(r,c,gamma):
     s = c*r**gamma # s = c.r**gamma
     s = rescale(s)
     return s
-def main():
 
-    image = cv2.imread("./photos/fourier_spectrum.tif" , 0)
-    image_gamma = cv2.imread("./photos/fourier_spectrum.tif" , 0)
+def main():
+    image = cv2.imread("./photos/ayrık6.png" , 0)
+    image_gamma = cv2.imread("./photos/ayrık6.jpg" , 0)
     negative_image = negative(image)
     image_log = log_transformation(image , c=1)
     neighboor_image = stack(image,negative_image)
 
-    gamma_force = [3, 4, 5]
+    gamma_force = [3 , 4, 5]
     force_transform = []
     for gamma in gamma_force:
         force = gamma_transformation(image_gamma , c=1 , gamma=gamma)
